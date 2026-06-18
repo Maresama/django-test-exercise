@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from todo import views as todo_views  # ← これが確実に必要です
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', todo_views.index, name='index'),
 ]
